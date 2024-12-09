@@ -1,83 +1,84 @@
-+++
-title = "Dọn dẹp tài nguyên  "
-date = 2021
-weight = 6
-chapter = false
-pre = "<b>6. </b>"
-+++
+---
+title: "Dọn dẹp"
+date: "`r Sys.Date()`"
+weight: 7
+chapter: true
+pre: "<b>7 </b>"
+---
 
-Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.
+Trong phần này, chúng tôi sẽ hướng dẫn chi tiết từng bước để dọn dẹp các tài nguyên đã tạo trong workshop này, giúp tránh các chi phí không cần thiết.
 
-#### Xóa EC2 instance
+### 1. Xóa Dịch vụ và Cluster ECS
 
-1. Truy cập [giao diện quản trị dịch vụ EC2](https://console.aws.amazon.com/ec2/v2/home)
-  + Click **Instances**.
-  + Click chọn cả 2 instance **Public Linux Instance** và **Private Windows Instance**. 
-  + Click **Instance state**.
-  + Click **Terminate instance**, sau đó click **Terminate** để xác nhận.
+1. Truy cập [ECS Console](https://console.aws.amazon.com/ecs).
+2. Trong menu bên trái, chọn **Clusters**.
+3. Chọn **Cluster** bạn đã tạo cho workshop (ví dụ, **LabCluster**).
+4. Chọn tab **Services** và:
+   - Click vào từng dịch vụ.
+   - Chọn **Update** và đặt **Desired tasks** là **0** để dừng dịch vụ.
+   - Sau khi dịch vụ dừng, click **Delete** và xác nhận xóa.
+5. Sau khi xóa hết dịch vụ, quay lại danh sách **Cluster**.
+6. Chọn cluster và click **Delete Cluster** để xóa hoàn toàn.
 
-2. Truy cập [giao diện quản trị dịch vụ IAM](https://console.aws.amazon.com/iamv2/home#/home)
-  + Click **Roles**.
-  + Tại ô tìm kiếm , điền **SSM**.
-  + Click chọn **SSM-Role**.
-  + Click **Delete**, sau đó điền tên role **SSM-Role** và click **Delete** để xóa role.
-  
-![Clean](/images/6.clean/001-clean.png)
+### 2. Xóa Application Load Balancer (ALB)
 
-3. Click **Users**.
-  + Click chọn user **Portfwd**.
-  + Click **Delete**, sau đó điền tên user **Portfwd** và click **Delete** để xóa user.
+1. Truy cập [EC2 Console](https://console.aws.amazon.com/ec2).
+2. Trong menu bên trái, chọn **Load Balancers**.
+3. Chọn **Application Load Balancer** đã tạo cho workshop (ví dụ, **LabALB**).
+4. Click **Actions > Delete** và xác nhận xóa.
 
-#### Xóa S3 bucket
+### 3. Xóa Auto Scaling Groups
 
-1. Truy cập [giao diện quản trị dịch vụ System Manager - Session Manager](https://console.aws.amazon.com/systems-manager/session-manager).
-  + Click tab **Preferences**.
-  + Click **Edit**.
-  + Kéo chuột xuống dưới.
-  + Tại mục **S3 logging**.
-  + Bỏ chọn **Enable** để tắt tính năng logging.
-  + Kéo chuột xuống dưới.
-  + Click **Save**.
+1. Trong **EC2 Console**, chọn **Auto Scaling Groups** từ menu bên trái.
+2. Tìm **Auto Scaling Group** liên quan đến cluster ECS của bạn.
+3. Chọn nó, click **Delete** và xác nhận xóa.
 
-2. Truy cập [giao diện quản trị dịch vụ S3](https://s3.console.aws.amazon.com/s3/home)
-  + Click chọn S3 bucket chúng ta đã tạo cho bài thực hành. ( Ví dụ : lab-fcj-bucket-0001 )
-  + Click **Empty**.
-  + Điền **permanently delete**, sau đó click **Empty** để tiến hành xóa object trong bucket.
-  + Click **Exit**.
+### 4. Xóa Elastic Container Registry (ECR) Repositories
 
-3. Sau khi xóa hết object trong bucket, click **Delete**
+1. Truy cập [ECR Console](https://console.aws.amazon.com/ecr).
+2. Chọn **Repositories** từ menu bên trái.
+3. Click vào repository bạn đã tạo (ví dụ, **LabRepo**).
+4. Chọn **Delete** và xác nhận xóa repository cùng với nội dung.
 
-![Clean](/images/6.clean/002-clean.png)
+### 5. Xóa S3 Buckets
 
-4. Điền tên S3 bucket, sau đó click **Delete bucket** để tiến hành xóa S3 bucket.
+1. Truy cập [S3 Console](https://console.aws.amazon.com/s3).
+2. Tìm **Bucket** đã tạo cho workshop (ví dụ, **LabBucket**).
+3. Click vào tên bucket.
+4. Trong tab **Objects**, chọn **Empty bucket** để xóa nội dung.
+5. Quay lại giao diện **Buckets**.
+6. Chọn bucket, click **Delete bucket** và xác nhận xóa.
 
-![Clean](/images/6.clean/003-clean.png)
+### 6. Xóa IAM Roles và Policies
 
-#### Xóa các VPC Endpoint
+1. Truy cập [IAM Console](https://console.aws.amazon.com/iam).
+2. Trong menu bên trái, chọn **Roles**.
+3. Tìm các role đã tạo (ví dụ, **LabRole** hoặc **SSM-Role**).
+4. Click vào từng role và trong tab **Permissions**, hủy gán các policy liên quan (ví dụ, **AmazonSSMFullAccess**).
+5. Quay lại danh sách **Roles**, chọn role và click **Delete Role** để xóa.
+6. Lặp lại tương tự cho các **Policies** tùy chỉnh nếu cần.
 
-1. Truy cập vào [giao diện quản trị dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Endpoints**.
-  + Chọn 4 endpoints chúng ta đã tạo cho bài thực hành bao gồm **SSM**, **SSMMESSAGES**, **EC2MESSAGES**, **S3GW**.
-  + Click **Actions**.
-  + Click **Delete VPC endpoints**.
+### 7. Xóa VPC và các Thành phần Mạng
 
-![Clean](/images/6.clean/004-clean.png)
+1. Truy cập [VPC Console](https://console.aws.amazon.com/vpc).
+2. Trong phần **Your VPCs**:
+   - Chọn VPC đã tạo (ví dụ, **LabVPC**).
+   - Click **Actions > Delete VPC** và xác nhận.
+3. Đối với mỗi **Subnet** đã tạo:
+   - Truy cập **Subnets** trong menu bên trái.
+   - Chọn từng subnet liên quan đến **LabVPC** và click **Delete**.
+4. Truy cập **Route Tables**:
+   - Xóa các bảng định tuyến liên quan đến **LabVPC**.
+5. Truy cập **Internet Gateways**:
+   - Hủy liên kết gateway với **LabVPC** nếu có.
+   - Chọn gateway và click **Delete Internet Gateway**.
 
-2. Tại ô confirm , điền **delete**.
-  + Click **Delete** để tiến hành xóa các endpoints.
+### 8. Dừng và Xóa EC2 Instances
 
-3. Click biểu tượng refresh, kiểm tra tất cả các endpoints đã bị xóa trước khi làm bước tiếp theo.
+1. Truy cập [EC2 Console](https://console.aws.amazon.com/ec2).
+2. Trong phần **Instances**:
+   - Chọn các instance **Public** và **Private** đã tạo cho workshop.
+   - Click **Actions > Instance State > Terminate**.
+   - Xác nhận dừng và xóa.
 
-![Clean](/images/6.clean/005-clean.png)
-
-#### Xóa VPC
-
-1. Truy cập vào [giao diện quản trị dịch vụ VPC](https://console.aws.amazon.com/vpc/home)
-  + Click **Your VPCs**.
-  + Click chọn **Lab VPC**.
-  + Click **Actions**.
-  + Click **Delete VPC**.
-
-2. Tại ô confirm, điền **delete** để xác nhận, click **Delete** để thực hiện xóa **Lab VPC** và các tài nguyên liên quan.
-
-![Clean](/images/6.clean/006-clean.png)
+---

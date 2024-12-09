@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tạo VPC :: AWS System Manager</title>
+    <title>Chuẩn bị VPC và EC2 :: AWS System Manager</title>
 
     
-    <link href="/css/nucleus.css?1730712430" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1730712430" rel="stylesheet">
-    <link href="/css/hybrid.css?1730712430" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1730712430" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1730712430" rel="stylesheet">
-    <link href="/css/auto-complete.css?1730712430" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1730712430" rel="stylesheet">
-    <link href="/css/theme.css?1730712430" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1730712430" rel="stylesheet">
+    <link href="/css/nucleus.css?1733734951" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733734951" rel="stylesheet">
+    <link href="/css/hybrid.css?1733734951" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733734951" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733734951" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733734951" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733734951" rel="stylesheet">
+    <link href="/css/theme.css?1733734951" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733734951" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1730712430" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733734951" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1730712430"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733734951"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1730712430"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1730712430"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733734951"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733734951"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1730712430"></script>
+<script type="text/javascript" src="/js/search.js?1733734951"></script>
 
     
   </div>
@@ -139,13 +139,13 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/2.1-networking/" title="Tạo VPC" class="dd-item 
+    <li data-nav-id="/vi/2-prerequiste/2.1-networking/" title="Chuẩn bị VPC và EC2" class="dd-item 
         
         active
         
         ">
       <a href="/vi/2-prerequiste/2.1-networking/">
-           <b> 2.1.1 </b> Tạo VPC
+           <b> 2.1 </b> Chuẩn bị VPC và EC2
           
             <i class="fas fa-check read-icon"></i>
           
@@ -170,13 +170,13 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/" title="Giới thiệu về Tạo pipeline CI/CD trên AWS" class="dd-item 
+    <li data-nav-id="/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/" title="Tạo VPC" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/">
-          <b>1</b>Giới thiệu về Tạo pipeline CI/CD trên AWS
+           <b> 2.1.1 </b> Tạo VPC
           
             <i class="fas fa-check read-icon"></i>
           
@@ -226,13 +226,13 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/" title="Tạo Private subnet" class="dd-item 
+    <li data-nav-id="/vi/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/" title="Tạo Private Subnet" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/">
-           <b> 2.1.3 </b> Tạo Private subnet
+           <b> 2.1.3 </b> Tạo Private Subnet
           
             <i class="fas fa-check read-icon"></i>
           
@@ -254,13 +254,13 @@
  
   
     
-    <li data-nav-id="/vi/2-prerequiste/2.1-networking/2.1.4-createsecgroup/" title="Tạo các security group" class="dd-item 
+    <li data-nav-id="/vi/2-prerequiste/2.1-networking/2.1.4-createsecgroup/" title="Tạo Security Groups" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-prerequiste/2.1-networking/2.1.4-createsecgroup/">
-           <b> 2.1.4 </b> Tạo các security group
+           <b> 2.1.4 </b> Tạo Security Groups
           
             <i class="fas fa-check read-icon"></i>
           
@@ -291,69 +291,41 @@
  
   
     
+    <li data-nav-id="/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/" title="Tạo Private Instance" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/">
+           <b> 2.2 </b> Tạo Private Instance
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
     <li data-nav-id="/vi/2-prerequiste/2.3-iam-and-access/" title="Tạo IAM Role" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-prerequiste/2.3-iam-and-access/">
-           <b> 2.2 </b> Tạo IAM Role
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/2-prerequiste/2.2-compute/2.1.5-createec2linux/" title="Tạo Public Linux EC2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/2-prerequiste/2.2-compute/2.1.5-createec2linux/">
-           <b> 2.1.5 </b> Tạo Public Linux EC2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/" title="Tạo Private Windows EC2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/">
-           <b> 2.1.6 </b> Tạo Private Windows EC2
+           <b> 2.3 </b> Tạo IAM Role
           
             <i class="fas fa-check read-icon"></i>
           
@@ -818,18 +790,142 @@
  
   
     
-    <li data-nav-id="/vi/5-cicdpipeline/" title="Port Forwarding" class="dd-item 
+    <li data-nav-id="/vi/5-cicdpipeline/" title="Tổng Quan Về CI/CD Pipeline" class="dd-item 
         
         
         
         ">
       <a href="/vi/5-cicdpipeline/">
-           <b> 5. </b> Port Forwarding
+          <b> 5 </b>Tổng Quan Về CI/CD Pipeline
           
             <i class="fas fa-check read-icon"></i>
           
       </a>
       
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-cicdpipeline/5.1-codecommit/" title="Tạo Repository CodeCommit" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-cicdpipeline/5.1-codecommit/">
+          <b> 5.1.1</b>Tạo Repository CodeCommit
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-cicdpipeline/5.2-codepipeline/" title="Tạo Pipeline" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-cicdpipeline/5.2-codepipeline/">
+           <b> 5.2.1 </b> Tạo Pipeline
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-cicdpipeline/5.3-codebuild/" title="Tạo Build Project" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-cicdpipeline/5.3-codebuild/">
+           <b> 5.3.1 </b> Tạo Build Project
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-cicdpipeline/5.4-ecr/" title="Tạo Repository trên ECR" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-cicdpipeline/5.4-ecr/">
+           <b> 5.4.1 </b> Tạo Repository trên ECR
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
               
     </li>
   
@@ -844,13 +940,107 @@
  
   
     
-    <li data-nav-id="/vi/7-cleanup/" title="Dọn dẹp tài nguyên  " class="dd-item 
+    <li data-nav-id="/vi/6-applicationdeployment/" title="Triển khai Ứng dụng" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-applicationdeployment/">
+          <b>6 </b>Triển khai Ứng dụng
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-applicationdeployment/6.1-ecs/" title="ECS" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-applicationdeployment/6.1-ecs/">
+          <b>6.1 </b>ECS
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-applicationdeployment/6.2-loadbalancer/" title="Load Balancer" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/6-applicationdeployment/6.2-loadbalancer/">
+          <b>6.2 </b>Load Balancer
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/7-cleanup/" title="Dọn dẹp" class="dd-item 
         
         
         
         ">
       <a href="/vi/7-cleanup/">
-          <b>6. </b>Dọn dẹp tài nguyên  
+          <b>7 </b>Dọn dẹp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1003,7 +1193,7 @@
             
           
           
-            <a href='/vi/'>Session Management</a> > <a href='/vi/2-prerequiste/'>Các bước chuẩn bị</a> > Tạo VPC
+            <a href='/vi/'>Session Management</a> > <a href='/vi/2-prerequiste/'>Các bước chuẩn bị</a> > Chuẩn bị VPC và EC2
           
         
           
@@ -1020,7 +1210,7 @@
   <ul>
     <li>
       <ul>
-        <li></li>
+        <li><a href="#nội-dung">Nội dung</a></li>
       </ul>
     </li>
   </ul>
@@ -1040,7 +1230,7 @@
           
             <h1>
               
-              Tạo VPC
+              Chuẩn bị VPC và EC2
             </h1>
           
 
@@ -1048,26 +1238,23 @@
 
 
 
-	<h4 id="tạo-vpc-lab-vpc">Tạo VPC <strong>Lab VPC</strong></h4>
-<ol>
-<li>Truy cập <a href="https://console.aws.amazon.com/vpc/home">giao diện quản trị dịch vụ VPC</a>
+	<p>Trong bước này, chúng ta sẽ tạo một VPC với 2 subnet công khai và riêng tư. Sau đó, tạo một EC2 Instance Linux nằm trong subnet công khai và một EC2 Instance Windows nằm trong subnet riêng tư.</p>
+<p>Kiến trúc tổng quan sau khi bạn hoàn thành bước này sẽ như sau:</p>
+<p><img alt="alt text" src="/2-prerequiste/2.1-networking/image.png"></p>
+<p>Để tìm hiểu cách tạo các instance EC2 và VPC với subnet công khai/riêng tư, bạn có thể tham khảo bài lab:</p>
 <ul>
-<li>Chọn <strong>Your VPC</strong>.</li>
-<li>Chọn <strong>Create VPC</strong>.</li>
+<li><a href="https://000004.awsstudygroup.com/vi/">Giới thiệu về Amazon EC2</a></li>
+<li><a href="https://000003.awsstudygroup.com/vi/">Làm việc với Amazon VPC</a></li>
 </ul>
-</li>
-</ol>
-<p><img alt="VPC" src="/images/2.prerequisite/001-createvpc.png"></p>
-<ol start="2">
-<li>Tại trang <strong>Create VPC</strong>.
+<h3 id="nội-dung">Nội dung</h3>
 <ul>
-<li>Trong mục <strong>Name tag</strong>, điền <strong>Lab VPC</strong>.</li>
-<li>Trong mục <strong>IPv4 CIDR</strong>, nhập: <strong>10.10.0.0/16</strong>.</li>
-<li>Nhấn <strong>Create VPC</strong>.</li>
+<li><a href="/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/">Tạo VPC</a></li>
+<li><a href="/vi/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/">Tạo Subnet công khai</a></li>
+<li><a href="/vi/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/">Tạo Subnet riêng tư</a></li>
+<li><a href="/vi/2-prerequiste/2.1-networking/2.1.4-createsecgroup/">Tạo nhóm bảo mật</a></li>
+<li><a href="2.1.5-createec2linux/">Tạo máy chủ Linux công khai</a></li>
+<li><a href="2.1.6-createec2windows/">Tạo máy chủ Windows riêng tư</a></li>
 </ul>
-</li>
-</ol>
-<p><img alt="VPC" src="/images/2.prerequisite/002-createvpc.png"></p>
 
 
 
@@ -1256,22 +1443,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
             
         
                     
@@ -1517,8 +1688,124 @@
 
                     
                     
+                        
+                    
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
             
         
@@ -1551,7 +1838,7 @@
 			<a class="nav nav-prev" href="/vi/2-prerequiste/" title="Các bước chuẩn bị"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/" title="Giới thiệu về Tạo pipeline CI/CD trên AWS" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/" title="Tạo VPC" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1561,19 +1848,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1730712430"></script>
-    <script src="/js/perfect-scrollbar.min.js?1730712430"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1730712430"></script>
-    <script src="/js/jquery.sticky.js?1730712430"></script>
-    <script src="/js/featherlight.min.js?1730712430"></script>
-    <script src="/js/highlight.pack.js?1730712430"></script>
+    <script src="/js/clipboard.min.js?1733734951"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733734951"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733734951"></script>
+    <script src="/js/jquery.sticky.js?1733734951"></script>
+    <script src="/js/featherlight.min.js?1733734951"></script>
+    <script src="/js/highlight.pack.js?1733734951"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1730712430"></script>
-    <script src="/js/learn.js?1730712430"></script>
-    <script src="/js/hugo-learn.js?1730712430"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733734951"></script>
+    <script src="/js/learn.js?1733734951"></script>
+    <script src="/js/hugo-learn.js?1733734951"></script>
 
-    <link href="/mermaid/mermaid.css?1730712430" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1730712430"></script>
+    <link href="/mermaid/mermaid.css?1733734951" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733734951"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -2,19 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.1-networking/</loc>
-    <lastmod>2024-09-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.1-networking/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.1-networking/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/1-introduce/</loc>
     <lastmod>2024-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -26,19 +13,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/1-introduce/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/</loc>
-    <lastmod>2024-09-15T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.1-networking/2.1.1-createvpc/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/</loc>
@@ -64,6 +38,30 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/4-s3log/4.1-updateiamrole/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/2-prerequiste/2.1-networking/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-prerequiste/2.1-networking/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-prerequiste/2.1-networking/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-applicationdeployment/6.1-ecs/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-applicationdeployment/6.1-ecs/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-applicationdeployment/6.1-ecs/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/3-accessibilitytoinstances/3.1-public-instance/</loc>
@@ -102,8 +100,31 @@
                 href="//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/5-cicdpipeline/5.1-codecommit/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-cicdpipeline/5.1-codecommit/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-cicdpipeline/5.1-codecommit/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-prerequiste/2.1-networking/2.1.1-createvpc/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/2-prerequiste/</loc>
-    <lastmod>2024-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -113,6 +134,18 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/2-prerequiste/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-applicationdeployment/6.2-loadbalancer/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-applicationdeployment/6.2-loadbalancer/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-applicationdeployment/6.2-loadbalancer/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/</loc>
@@ -127,18 +160,6 @@
                 href="//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.3-iam-and-access/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.3-iam-and-access/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.3-iam-and-access/"
-                />
-  </url><url>
     <loc>//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/</loc>
     <xhtml:link
                 rel="alternate"
@@ -149,6 +170,30 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/5-cicdpipeline/5.2-codepipeline/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-cicdpipeline/5.2-codepipeline/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-cicdpipeline/5.2-codepipeline/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-prerequiste/2.2-compute/2.1.6-createec2windows/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/</loc>
@@ -199,6 +244,18 @@
                 href="//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/5-cicdpipeline/5.3-codebuild/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-cicdpipeline/5.3-codebuild/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-cicdpipeline/5.3-codebuild/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/</loc>
     <xhtml:link
                 rel="alternate"
@@ -209,6 +266,18 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/2-prerequiste/2.3-iam-and-access/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/2-prerequiste/2.3-iam-and-access/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/2-prerequiste/2.3-iam-and-access/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/3-accessibilitytoinstances/</loc>
@@ -259,6 +328,18 @@
                 href="//localhost:1313/vi/4-s3log/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/5-cicdpipeline/5.4-ecr/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/5-cicdpipeline/5.4-ecr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/5-cicdpipeline/5.4-ecr/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/2-prerequiste/2.1-networking/2.1.4-createsecgroup/</loc>
     <xhtml:link
                 rel="alternate"
@@ -295,20 +376,19 @@
                 href="//localhost:1313/vi/5-cicdpipeline/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.2-compute/2.1.5-createec2linux/</loc>
+    <loc>//localhost:1313/vi/6-applicationdeployment/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.2-compute/2.1.5-createec2linux/"
+                href="//localhost:1313/6-applicationdeployment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.2-compute/2.1.5-createec2linux/"
+                href="//localhost:1313/vi/6-applicationdeployment/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/7-cleanup/</loc>
-    <lastmod>1970-01-01T07:33:41+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -318,18 +398,6 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/7-cleanup/"
-                />
-  </url><url>
-    <loc>//localhost:1313/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="//localhost:1313/2-prerequiste/2.2-compute/2.1.6-createec2windows/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="//localhost:1313/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/categories/</loc>

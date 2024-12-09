@@ -9,11 +9,8 @@ pre : " <b> 4. </b> "
 
 Với Session Manager chúng ta có thể xem được lịch sử các kết nối tới các instance thông qua **Session history**. Tuy nhiên chúng ta chưa xem được chi tiết các câu lệnh được sử dụng.
 
-![S3](/images/4.s3/001-s3.png)
-
 Trong phần này chúng ta sẽ tiến hành tạo S3 bucket và thực hiện cấu hình lưu trữ các session logs để xem được chi tiết các câu lệnh được sử dụng trong session.
 
-![port-fwd](/images/arc-log.png) 
 
 ### Nội dung:
 

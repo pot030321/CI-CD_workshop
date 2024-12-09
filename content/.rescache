@@ -1,1 +1,1 @@
-{"__version__":1,"totalSize":90638,"count":54,"data":{"1-Introduce":[1,8244],"2-Prerequiste":[1,32602],"3-Accessibilitytoinstances":[1,22254],"4-s3log":[1,11921],"5-Portfwd":[1,8030],"6-cleanup":[1,6195],"_index.md":[0,621],"_index.vi.md":[0,771]}}
+{"__version__":1,"totalSize":161116,"count":67,"data":{"1-Introduce":[1,8244],"2-Prerequiste":[1,87695],"3-Accessibilitytoinstances":[1,22254],"4-s3log":[1,11921],"5-CICDPipeline":[1,14237],"6-ApplicationDeployment":[1,9178],"7-cleanup":[1,6195],"_index.md":[0,621],"_index.vi.md":[0,771]}}

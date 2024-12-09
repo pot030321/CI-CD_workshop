@@ -13,7 +13,7 @@ pre : " <b> 3.1. </b> "
   + Click **Security**.
   + Click **Modify IAM role**.
 
-![Connect](/images/3.connect/001-connect.png)
+![Connect](content/3-Accessibilitytoinstances/vpc.png)
 
 2. At the Modify IAM role page.
   + Click to select **SSM-Role**.

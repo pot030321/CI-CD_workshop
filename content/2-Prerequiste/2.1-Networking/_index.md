@@ -10,7 +10,7 @@ In this step, we will create a VPC with 2 public and private subnets. Then, crea
 
 The architecture overview after you complete this step will be as follows:
 
-![VPC](![alt text](image.png))
+![alt text](image.png)
 
 To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:
   - [About Amazon EC2](https://000004.awsstudygroup.com/en/)

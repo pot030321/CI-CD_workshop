@@ -19,7 +19,6 @@ pre : " <b> 4.1 </b> "
 
 2. Click **Attach policies**.
  
-![S3](/images/4.s3/003-s3.png)
 
 3. Tại ô Search điền **S3**.
   + Click chọn policy **AmazonS3FullAccess**.

@@ -19,7 +19,7 @@ For our EC2 instances to be able to send session logs to the S3 bucket, we will 
 
 2. Click **Attach policies**.
  
-![S3](/images/4.s3/003-s3.png)
+ 
 
 3. In the Search box enter **S3**.
   + Click the policy **AmazonS3FullAccess**.
