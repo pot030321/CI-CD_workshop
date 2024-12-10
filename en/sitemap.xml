@@ -2,415 +2,415 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/1-introduce/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/1-introduce/</loc>
     <lastmod>2024-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/1-introduce/"
+                href="http://localhost:1313/CI-CD_workshop/vi/1-introduce/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/1-introduce/"
+                href="http://localhost:1313/CI-CD_workshop/1-introduce/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/</loc>
     <lastmod>2024-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/"
+                href="http://localhost:1313/CI-CD_workshop/vi/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/"
+                href="http://localhost:1313/CI-CD_workshop/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.1-public-instance/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.1-public-instance/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/3-accessibilitytoinstances/3.1-public-instance/"
+                href="http://localhost:1313/CI-CD_workshop/vi/3-accessibilitytoinstances/3.1-public-instance/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.1-public-instance/"
+                href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.1-public-instance/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.1-codecommit/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.1-codecommit/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/5-cicdpipeline/5.1-codecommit/"
+                href="http://localhost:1313/CI-CD_workshop/vi/5-cicdpipeline/5.1-codecommit/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.1-codecommit/"
+                href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.1-codecommit/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/"
+                href="http://localhost:1313/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/"
+                href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/"
+                href="http://localhost:1313/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.1-createvpc/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/"
+                href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/6-applicationdeployment/6.1-ecs/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/6-applicationdeployment/6.1-ecs/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/6-applicationdeployment/6.1-ecs/"
+                href="http://localhost:1313/CI-CD_workshop/vi/6-applicationdeployment/6.1-ecs/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/6-applicationdeployment/6.1-ecs/"
+                href="http://localhost:1313/CI-CD_workshop/6-applicationdeployment/6.1-ecs/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/"
+                href="http://localhost:1313/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/"
+                href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/2-prerequiste/2.1-networking/"
+                href="http://localhost:1313/CI-CD_workshop/vi/2-prerequiste/2.1-networking/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/"
+                href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/4-s3log/4.1-updateiamrole/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/4-s3log/4.1-updateiamrole/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/4-s3log/4.1-updateiamrole/"
+                href="http://localhost:1313/CI-CD_workshop/vi/4-s3log/4.1-updateiamrole/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/4-s3log/4.1-updateiamrole/"
+                href="http://localhost:1313/CI-CD_workshop/4-s3log/4.1-updateiamrole/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/2-prerequiste/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/2-prerequiste/</loc>
     <lastmod>2024-09-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/2-prerequiste/"
+                href="http://localhost:1313/CI-CD_workshop/vi/2-prerequiste/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/"
+                href="http://localhost:1313/CI-CD_workshop/2-prerequiste/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/"
+                href="http://localhost:1313/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/"
+                href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/"
+                href="http://localhost:1313/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/"
+                href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.2-codepipeline/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.2-codepipeline/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/5-cicdpipeline/5.2-codepipeline/"
+                href="http://localhost:1313/CI-CD_workshop/vi/5-cicdpipeline/5.2-codepipeline/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.2-codepipeline/"
+                href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.2-codepipeline/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.2-compute/2.1.6-createec2windows/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/2-prerequiste/2.2-compute/2.1.6-createec2windows/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/"
+                href="http://localhost:1313/CI-CD_workshop/vi/2-prerequiste/2.2-compute/2.1.6-createec2windows/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.2-compute/2.1.6-createec2windows/"
+                href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.2-compute/2.1.6-createec2windows/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/"
+                href="http://localhost:1313/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/"
+                href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/4-s3log/4.2-creates3bucket/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/4-s3log/4.2-creates3bucket/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/4-s3log/4.2-creates3bucket/"
+                href="http://localhost:1313/CI-CD_workshop/vi/4-s3log/4.2-creates3bucket/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/4-s3log/4.2-creates3bucket/"
+                href="http://localhost:1313/CI-CD_workshop/4-s3log/4.2-creates3bucket/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/"
+                href="http://localhost:1313/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/"
+                href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/6-applicationdeployment/6.2-loadbalancer/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/6-applicationdeployment/6.2-loadbalancer/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/6-applicationdeployment/6.2-loadbalancer/"
+                href="http://localhost:1313/CI-CD_workshop/vi/6-applicationdeployment/6.2-loadbalancer/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/6-applicationdeployment/6.2-loadbalancer/"
+                href="http://localhost:1313/CI-CD_workshop/6-applicationdeployment/6.2-loadbalancer/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/3-accessibilitytoinstances/"
+                href="http://localhost:1313/CI-CD_workshop/vi/3-accessibilitytoinstances/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/"
+                href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/"
+                href="http://localhost:1313/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/"
+                href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.3-codebuild/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.3-codebuild/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/5-cicdpipeline/5.3-codebuild/"
+                href="http://localhost:1313/CI-CD_workshop/vi/5-cicdpipeline/5.3-codebuild/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.3-codebuild/"
+                href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.3-codebuild/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/"
+                href="http://localhost:1313/CI-CD_workshop/vi/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/"
+                href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/2-prerequiste/2.3-iam-and-access/"
+                href="http://localhost:1313/CI-CD_workshop/vi/2-prerequiste/2.3-iam-and-access/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/"
+                href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/"
+                href="http://localhost:1313/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/"
+                href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/4-s3log/4.3-creategwes3/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/4-s3log/4.3-creategwes3/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/4-s3log/4.3-creategwes3/"
+                href="http://localhost:1313/CI-CD_workshop/vi/4-s3log/4.3-creategwes3/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/4-s3log/4.3-creategwes3/"
+                href="http://localhost:1313/CI-CD_workshop/4-s3log/4.3-creategwes3/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.4-ecr/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.4-ecr/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/5-cicdpipeline/5.4-ecr/"
+                href="http://localhost:1313/CI-CD_workshop/vi/5-cicdpipeline/5.4-ecr/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.4-ecr/"
+                href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.4-ecr/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.4-createsecgroup/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.4-createsecgroup/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.4-createsecgroup/"
+                href="http://localhost:1313/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.4-createsecgroup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.4-createsecgroup/"
+                href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.4-createsecgroup/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/4-s3log/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/4-s3log/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/4-s3log/"
+                href="http://localhost:1313/CI-CD_workshop/vi/4-s3log/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/4-s3log/"
+                href="http://localhost:1313/CI-CD_workshop/4-s3log/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/5-cicdpipeline/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/5-cicdpipeline/"
+                href="http://localhost:1313/CI-CD_workshop/vi/5-cicdpipeline/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/"
+                href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/6-applicationdeployment/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/6-applicationdeployment/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/6-applicationdeployment/"
+                href="http://localhost:1313/CI-CD_workshop/vi/6-applicationdeployment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/6-applicationdeployment/"
+                href="http://localhost:1313/CI-CD_workshop/6-applicationdeployment/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/7-cleanup/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/7-cleanup/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/7-cleanup/"
+                href="http://localhost:1313/CI-CD_workshop/vi/7-cleanup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/7-cleanup/"
+                href="http://localhost:1313/CI-CD_workshop/7-cleanup/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/categories/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/categories/"
+                href="http://localhost:1313/CI-CD_workshop/vi/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/categories/"
+                href="http://localhost:1313/CI-CD_workshop/categories/"
                 />
   </url><url>
-    <loc>https://pot030321.github.io/CI-CD_workshop/tags/</loc>
+    <loc>http://localhost:1313/CI-CD_workshop/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="https://pot030321.github.io/CI-CD_workshop/vi/tags/"
+                href="http://localhost:1313/CI-CD_workshop/vi/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://pot030321.github.io/CI-CD_workshop/tags/"
+                href="http://localhost:1313/CI-CD_workshop/tags/"
                 />
   </url>
 </urlset>

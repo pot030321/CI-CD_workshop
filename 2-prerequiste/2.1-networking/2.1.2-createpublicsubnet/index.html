@@ -5,28 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.134.2">
     <meta name="description" content="AWS CI/CD Workshop">
-<meta name="author" content="journeyoftheaverageguy@gmail.com">
+<meta name="author" content="quanganhzzz8@gmail.com">
 
-    <link rel="icon" href="/CI-CD_workshop/images/favicon.png" type="image/png">
+    <link rel="icon" href="http://localhost:1313/CI-CD_workshop/images/favicon.png" type="image/png">
 
-    <title>Create Public Subnet :: AWS System Manager</title>
+    <title>Create Public Subnet :: Introduction to Building a CI/CD Pipeline on AWS</title>
 
     
-    <link href="/CI-CD_workshop/css/nucleus.css?1733755697" rel="stylesheet">
-    <link href="/CI-CD_workshop/css/fontawesome-all.min.css?1733755697" rel="stylesheet">
-    <link href="/CI-CD_workshop/css/hybrid.css?1733755697" rel="stylesheet">
-    <link href="/CI-CD_workshop/css/featherlight.min.css?1733755697" rel="stylesheet">
-    <link href="/CI-CD_workshop/css/perfect-scrollbar.min.css?1733755697" rel="stylesheet">
-    <link href="/CI-CD_workshop/css/auto-complete.css?1733755697" rel="stylesheet">
-    <link href="/CI-CD_workshop/css/atom-one-dark-reasonable.css?1733755697" rel="stylesheet">
-    <link href="/CI-CD_workshop/css/theme.css?1733755697" rel="stylesheet">
-    <link href="/CI-CD_workshop/css/hugo-theme.css?1733755697" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/nucleus.css?1733838619" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/fontawesome-all.min.css?1733838619" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/hybrid.css?1733838619" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/featherlight.min.css?1733838619" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/perfect-scrollbar.min.css?1733838619" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/auto-complete.css?1733838619" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/atom-one-dark-reasonable.css?1733838619" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/theme.css?1733838619" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/hugo-theme.css?1733838619" rel="stylesheet">
     
-    <link href="/CI-CD_workshop/css/theme-workshop.css?1733755697" rel="stylesheet">
+    <link href="http://localhost:1313/CI-CD_workshop/css/theme-workshop.css?1733838619" rel="stylesheet">
     
     
 
-    <script src="/CI-CD_workshop/js/jquery-3.3.1.min.js?1733755697"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/jquery-3.3.1.min.js?1733838619"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -36,14 +36,14 @@
     </style>
     
   </head>
-  <body class="" data-url="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/">
+  <body class="" data-url="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/">
     <nav id="sidebar" class="showVisitedLinks">
 
 
 
   <div id="header-wrapper">
     <div id="header">
-      <a id="logo" href="/">
+      <a id="logo" href="http://localhost:1313/CI-CD_workshop/">
 
 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:#f90;fill-rule:evenodd;}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09,10.85a4.7,4.7,0,0,0,.19,1.48,7.73,7.73,0,0,0,.54,1.19.77.77,0,0,1,.12.38.64.64,0,0,1-.32.49l-1,.7a.83.83,0,0,1-.44.15.69.69,0,0,1-.49-.23,3.8,3.8,0,0,1-.6-.77q-.25-.42-.51-1a6.14,6.14,0,0,1-4.89,2.3,4.54,4.54,0,0,1-3.32-1.19,4.27,4.27,0,0,1-1.22-3.2A4.28,4.28,0,0,1,3.61,7.75,6.06,6.06,0,0,1,7.69,6.46a12.47,12.47,0,0,1,1.76.13q.92.13,1.91.36V5.73a3.65,3.65,0,0,0-.79-2.66A3.81,3.81,0,0,0,7.86,2.3a7.71,7.71,0,0,0-1.79.22,12.78,12.78,0,0,0-1.79.57,4.55,4.55,0,0,1-.58.22l-.26,0q-.35,0-.35-.52V2a1.09,1.09,0,0,1,.12-.58,1.2,1.2,0,0,1,.47-.35A10.88,10.88,0,0,1,5.77.32,10.19,10.19,0,0,1,8.36,0a6,6,0,0,1,4.35,1.35,5.49,5.49,0,0,1,1.38,4.09ZM7.34,13.38a5.36,5.36,0,0,0,1.72-.31A3.63,3.63,0,0,0,10.63,12,2.62,2.62,0,0,0,11.19,11a5.63,5.63,0,0,0,.16-1.44v-.7a14.35,14.35,0,0,0-1.53-.28,12.37,12.37,0,0,0-1.56-.1,3.84,3.84,0,0,0-2.47.67A2.34,2.34,0,0,0,5,11a2.35,2.35,0,0,0,.61,1.76A2.4,2.4,0,0,0,7.34,13.38Zm13.35,1.8a1,1,0,0,1-.64-.16,1.3,1.3,0,0,1-.35-.65L15.81,1.51a3,3,0,0,1-.15-.67.36.36,0,0,1,.41-.41H17.7a1,1,0,0,1,.65.16,1.4,1.4,0,0,1,.33.65l2.79,11,2.59-11A1.17,1.17,0,0,1,24.39.6a1.1,1.1,0,0,1,.67-.16H26.4a1.1,1.1,0,0,1,.67.16,1.17,1.17,0,0,1,.32.65L30,12.39,32.88,1.25A1.39,1.39,0,0,1,33.22.6a1,1,0,0,1,.65-.16h1.54a.36.36,0,0,1,.41.41,1.36,1.36,0,0,1,0,.26,3.64,3.64,0,0,1-.12.41l-4,12.86a1.3,1.3,0,0,1-.35.65,1,1,0,0,1-.64.16H29.25a1,1,0,0,1-.67-.17,1.26,1.26,0,0,1-.32-.67L25.67,3.64,23.11,14.34a1.26,1.26,0,0,1-.32.67,1,1,0,0,1-.67.17Zm21.36.44a11.28,11.28,0,0,1-2.56-.29,7.44,7.44,0,0,1-1.92-.67,1,1,0,0,1-.61-.93v-.84q0-.52.38-.52a.9.9,0,0,1,.31.06l.42.17a8.77,8.77,0,0,0,1.83.58,9.78,9.78,0,0,0,2,.2,4.48,4.48,0,0,0,2.43-.55,1.76,1.76,0,0,0,.86-1.57,1.61,1.61,0,0,0-.45-1.16A4.29,4.29,0,0,0,43,9.22l-2.41-.76A5.15,5.15,0,0,1,38,6.78a3.94,3.94,0,0,1-.83-2.41,3.7,3.7,0,0,1,.45-1.85,4.47,4.47,0,0,1,1.19-1.37A5.27,5.27,0,0,1,40.51.29,7.4,7.4,0,0,1,42.6,0a8.87,8.87,0,0,1,1.12.07q.57.07,1.08.19t.95.26a4.27,4.27,0,0,1,.7.29,1.59,1.59,0,0,1,.49.41.94.94,0,0,1,.15.55v.79q0,.52-.38.52a1.76,1.76,0,0,1-.64-.2,7.74,7.74,0,0,0-3.2-.64,4.37,4.37,0,0,0-2.21.47,1.6,1.6,0,0,0-.79,1.48,1.58,1.58,0,0,0,.49,1.18,4.94,4.94,0,0,0,1.83.92L44.55,7a5.08,5.08,0,0,1,2.57,1.6A3.76,3.76,0,0,1,47.9,11a4.21,4.21,0,0,1-.44,1.93,4.4,4.4,0,0,1-1.21,1.47,5.43,5.43,0,0,1-1.85.93A8.25,8.25,0,0,1,42.05,15.62Z"></path><path class="cls-2" d="M45.19,23.81C39.72,27.85,31.78,30,25,30A36.64,36.64,0,0,1,.22,20.57c-.51-.46-.06-1.09.56-.74A49.78,49.78,0,0,0,25.53,26.4,49.23,49.23,0,0,0,44.4,22.53C45.32,22.14,46.1,23.14,45.19,23.81Z"></path><path class="cls-2" d="M47.47,21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74,3.13-2.2,8.27-1.57,8.86-.83s-.16,5.89-3.09,8.35c-.45.38-.88.18-.68-.32C46.69,25.8,48.17,22.11,47.47,21.21Z"></path></svg>
 
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/CI-CD_workshop/js/lunr.min.js?1733755697"></script>
-<script type="text/javascript" src="/CI-CD_workshop/js/auto-complete.js?1733755697"></script>
+<script type="text/javascript" src="http://localhost:1313/CI-CD_workshop/js/lunr.min.js?1733838619"></script>
+<script type="text/javascript" src="http://localhost:1313/CI-CD_workshop/js/auto-complete.js?1733838619"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/CI-CD_workshop\/";
     
 </script>
-<script type="text/javascript" src="/CI-CD_workshop/js/search.js?1733755697"></script>
+<script type="text/javascript" src="http://localhost:1313/CI-CD_workshop/js/search.js?1733838619"></script>
 
     
   </div>
@@ -82,12 +82,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/1-introduce/" title="Introduction to Building a CI/CD Pipeline on AWS" class="dd-item 
+    <li data-nav-id="/1-introduce/" title="Introduction to Building a CI/CD Pipeline on AWS" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/1-introduce/">
+      <a href="http://localhost:1313/CI-CD_workshop/1-introduce/">
           <b>1</b>Introduction to Building a CI/CD Pipeline on AWS
           
             <i class="fas fa-check read-icon"></i>
@@ -108,12 +108,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/2-prerequiste/" title="Preparation Steps" class="dd-item 
+    <li data-nav-id="/2-prerequiste/" title="Preparation Steps" class="dd-item 
         parent
         
         
         ">
-      <a href="/CI-CD_workshop/2-prerequiste/">
+      <a href="http://localhost:1313/CI-CD_workshop/2-prerequiste/">
           <b>2.</b>Preparation Steps
           
             <i class="fas fa-check read-icon"></i>
@@ -139,12 +139,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/2-prerequiste/2.1-networking/" title="Preparing VPC and EC2" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-networking/" title="Preparing VPC and EC2" class="dd-item 
         parent
         
         
         ">
-      <a href="/CI-CD_workshop/2-prerequiste/2.1-networking/">
+      <a href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/">
            <b> 2.1 </b> Preparing VPC and EC2
           
             <i class="fas fa-check read-icon"></i>
@@ -170,12 +170,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/" title="Create VPC" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-networking/2.1.1-createvpc/" title="Create VPC" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/">
+      <a href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/">
            <b> 2.1.1 </b> Create VPC
           
             <i class="fas fa-check read-icon"></i>
@@ -198,12 +198,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/" title="Create Public Subnet" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/" title="Create Public Subnet" class="dd-item 
         
         active
         
         ">
-      <a href="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/">
+      <a href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/">
            <b> 2.1.2 </b> Create Public Subnet
           
             <i class="fas fa-check read-icon"></i>
@@ -226,12 +226,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/" title="Create Private Subnet" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/" title="Create Private Subnet" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/">
+      <a href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/">
            <b> 2.1.3 </b> Create Private Subnet
           
             <i class="fas fa-check read-icon"></i>
@@ -254,12 +254,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.4-createsecgroup/" title="Create Security Groups" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.1-networking/2.1.4-createsecgroup/" title="Create Security Groups" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.4-createsecgroup/">
+      <a href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.4-createsecgroup/">
            <b> 2.1.4 </b> Create Security Groups
           
             <i class="fas fa-check read-icon"></i>
@@ -291,12 +291,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/2-prerequiste/2.2-compute/2.1.6-createec2windows/" title="Create Private Instance" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.2-compute/2.1.6-createec2windows/" title="Create Private Instance" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/2-prerequiste/2.2-compute/2.1.6-createec2windows/">
+      <a href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.2-compute/2.1.6-createec2windows/">
            <b> 2.2 </b> Create Private Instance
           
             <i class="fas fa-check read-icon"></i>
@@ -319,12 +319,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/" title="Create IAM Role" class="dd-item 
+    <li data-nav-id="/2-prerequiste/2.3-iam-and-access/" title="Create IAM Role" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/">
+      <a href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/">
            <b> 2.3</b> Create IAM Role
           
             <i class="fas fa-check read-icon"></i>
@@ -354,12 +354,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/3-accessibilitytoinstances/" title="Connect to EC2 servers" class="dd-item 
+    <li data-nav-id="/3-accessibilitytoinstances/" title="Connect to EC2 servers" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/3-accessibilitytoinstances/">
+      <a href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/">
            <b> 3. </b> Connect to EC2 servers
           
             <i class="fas fa-check read-icon"></i>
@@ -385,12 +385,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/3-accessibilitytoinstances/3.1-public-instance/" title="Connect to Public Instance" class="dd-item 
+    <li data-nav-id="/3-accessibilitytoinstances/3.1-public-instance/" title="Connect to Public Instance" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/3-accessibilitytoinstances/3.1-public-instance/">
+      <a href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.1-public-instance/">
            <b> 3.1. </b> Connect to Public Instance
           
             <i class="fas fa-check read-icon"></i>
@@ -413,12 +413,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/" title="Connect to Private instance" class="dd-item 
+    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/" title="Connect to Private instance" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/">
+      <a href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/">
            <b> 3.2. </b> Connect to Private instance
           
             <i class="fas fa-check read-icon"></i>
@@ -444,12 +444,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/" title="Enable DNS hostnames" class="dd-item 
+    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/" title="Enable DNS hostnames" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/">
+      <a href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/">
            <b> 3.2.1 </b> Enable DNS hostnames
           
             <i class="fas fa-check read-icon"></i>
@@ -472,12 +472,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/" title="Create VPC Endpoint" class="dd-item 
+    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/" title="Create VPC Endpoint" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/">
+      <a href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/">
            <b> 3.2.2 </b> Create VPC Endpoint
           
             <i class="fas fa-check read-icon"></i>
@@ -503,12 +503,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/" title="Create Endpoint ssm" class="dd-item 
+    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/" title="Create Endpoint ssm" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/">
+      <a href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/">
            <b> 3.2.2.1 </b> Create Endpoint ssm
           
             <i class="fas fa-check read-icon"></i>
@@ -531,12 +531,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/" title="Create Endpoint ssmmessages" class="dd-item 
+    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/" title="Create Endpoint ssmmessages" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/">
+      <a href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/">
            <b> 3.2.2.2 </b> Create Endpoint ssmmessages
           
             <i class="fas fa-check read-icon"></i>
@@ -559,12 +559,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/" title="Create Endpoint ec2messages" class="dd-item 
+    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/" title="Create Endpoint ec2messages" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/">
+      <a href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/">
            <b> 3.2.2.3 </b> Create Endpoint ec2messages
           
             <i class="fas fa-check read-icon"></i>
@@ -596,12 +596,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/" title="Connect to instance" class="dd-item 
+    <li data-nav-id="/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/" title="Connect to instance" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/">
+      <a href="http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/">
            <b> 3.2.3 </b> Connect to instance
           
             <i class="fas fa-check read-icon"></i>
@@ -640,12 +640,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/4-s3log/" title="Manage session logs" class="dd-item 
+    <li data-nav-id="/4-s3log/" title="Manage session logs" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/4-s3log/">
+      <a href="http://localhost:1313/CI-CD_workshop/4-s3log/">
            <b> 4. </b> Manage session logs
           
             <i class="fas fa-check read-icon"></i>
@@ -671,12 +671,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/4-s3log/4.1-updateiamrole/" title="Update IAM Role" class="dd-item 
+    <li data-nav-id="/4-s3log/4.1-updateiamrole/" title="Update IAM Role" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/4-s3log/4.1-updateiamrole/">
+      <a href="http://localhost:1313/CI-CD_workshop/4-s3log/4.1-updateiamrole/">
            <b> 4.1 </b> Update IAM Role
           
             <i class="fas fa-check read-icon"></i>
@@ -699,12 +699,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/4-s3log/4.2-creates3bucket/" title="Create S3 Bucket" class="dd-item 
+    <li data-nav-id="/4-s3log/4.2-creates3bucket/" title="Create S3 Bucket" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/4-s3log/4.2-creates3bucket/">
+      <a href="http://localhost:1313/CI-CD_workshop/4-s3log/4.2-creates3bucket/">
            <b> 4.2 </b> Create S3 Bucket
           
             <i class="fas fa-check read-icon"></i>
@@ -727,12 +727,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/4-s3log/4.3-creategwes3/" title="Create S3 Gateway endpoint" class="dd-item 
+    <li data-nav-id="/4-s3log/4.3-creategwes3/" title="Create S3 Gateway endpoint" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/4-s3log/4.3-creategwes3/">
+      <a href="http://localhost:1313/CI-CD_workshop/4-s3log/4.3-creategwes3/">
            <b> 4.3 </b> Create S3 Gateway endpoint
           
             <i class="fas fa-check read-icon"></i>
@@ -762,12 +762,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/5-cicdpipeline/" title="CI/CD Pipeline Overview" class="dd-item 
+    <li data-nav-id="/5-cicdpipeline/" title="CI/CD Pipeline Overview" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/5-cicdpipeline/">
+      <a href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/">
           <b> 5 </b>CI/CD Pipeline Overview
           
             <i class="fas fa-check read-icon"></i>
@@ -793,12 +793,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/5-cicdpipeline/5.1-codecommit/" title="Create CodeCommit Repository" class="dd-item 
+    <li data-nav-id="/5-cicdpipeline/5.1-codecommit/" title="Create CodeCommit Repository" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/5-cicdpipeline/5.1-codecommit/">
+      <a href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.1-codecommit/">
            <b> 5.1.1 </b> Create CodeCommit Repository
           
             <i class="fas fa-check read-icon"></i>
@@ -821,12 +821,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/5-cicdpipeline/5.2-codepipeline/" title="Create Pipeline" class="dd-item 
+    <li data-nav-id="/5-cicdpipeline/5.2-codepipeline/" title="Create Pipeline" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/5-cicdpipeline/5.2-codepipeline/">
+      <a href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.2-codepipeline/">
            <b> 5.2.1 </b> Create Pipeline
           
             <i class="fas fa-check read-icon"></i>
@@ -849,12 +849,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/5-cicdpipeline/5.3-codebuild/" title="Create Build Project" class="dd-item 
+    <li data-nav-id="/5-cicdpipeline/5.3-codebuild/" title="Create Build Project" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/5-cicdpipeline/5.3-codebuild/">
+      <a href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.3-codebuild/">
            <b> 5.3.1 </b> Create Build Project
           
             <i class="fas fa-check read-icon"></i>
@@ -877,12 +877,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/5-cicdpipeline/5.4-ecr/" title="Create ECR Repository" class="dd-item 
+    <li data-nav-id="/5-cicdpipeline/5.4-ecr/" title="Create ECR Repository" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/5-cicdpipeline/5.4-ecr/">
+      <a href="http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.4-ecr/">
            <b> 5.4.1 </b> Create ECR Repository
           
             <i class="fas fa-check read-icon"></i>
@@ -912,12 +912,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/6-applicationdeployment/" title="Application Deployment" class="dd-item 
+    <li data-nav-id="/6-applicationdeployment/" title="Application Deployment" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/6-applicationdeployment/">
+      <a href="http://localhost:1313/CI-CD_workshop/6-applicationdeployment/">
           <b>6 </b>Application Deployment
           
             <i class="fas fa-check read-icon"></i>
@@ -943,12 +943,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/6-applicationdeployment/6.1-ecs/" title="ECS" class="dd-item 
+    <li data-nav-id="/6-applicationdeployment/6.1-ecs/" title="ECS" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/6-applicationdeployment/6.1-ecs/">
+      <a href="http://localhost:1313/CI-CD_workshop/6-applicationdeployment/6.1-ecs/">
           <b>6.1 </b>ECS
           
             <i class="fas fa-check read-icon"></i>
@@ -971,12 +971,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/6-applicationdeployment/6.2-loadbalancer/" title="Load Balancer" class="dd-item 
+    <li data-nav-id="/6-applicationdeployment/6.2-loadbalancer/" title="Load Balancer" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/6-applicationdeployment/6.2-loadbalancer/">
+      <a href="http://localhost:1313/CI-CD_workshop/6-applicationdeployment/6.2-loadbalancer/">
           <b>6.2 </b>Load Balancer
           
             <i class="fas fa-check read-icon"></i>
@@ -1006,12 +1006,12 @@
  
   
     
-    <li data-nav-id="/CI-CD_workshop/7-cleanup/" title="Cleanup" class="dd-item 
+    <li data-nav-id="/7-cleanup/" title="Cleanup" class="dd-item 
         
         
         
         ">
-      <a href="/CI-CD_workshop/7-cleanup/">
+      <a href="http://localhost:1313/CI-CD_workshop/7-cleanup/">
           <b>7 </b>Cleanup
           
             <i class="fas fa-check read-icon"></i>
@@ -1059,7 +1059,7 @@
                   
                     
                     
-                      <option id="en" value="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/" selected>English</option>
+                      <option id="en" value="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/" selected>English</option>
                     
                   
               
@@ -1073,7 +1073,7 @@
                   
                     
                     
-                      <option id="vi" value="https://pot030321.github.io/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/">Tiếng Việt</option>
+                      <option id="vi" value="http://localhost:1313/CI-CD_workshop/vi/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/">Tiếng Việt</option>
                     
                   
               
@@ -1169,7 +1169,7 @@
             
           
           
-            <a href='/CI-CD_workshop/'>Session Management</a> > <a href='/CI-CD_workshop/2-prerequiste/'>Preparation Steps</a> > <a href='/CI-CD_workshop/2-prerequiste/2.1-networking/'>Preparing VPC and EC2</a> > Create Public Subnet
+            <a href='http://localhost:1313/CI-CD_workshop/'>Session Management</a> > <a href='http://localhost:1313/CI-CD_workshop/2-prerequiste/'>Preparation Steps</a> > <a href='http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/'>Preparing VPC and EC2</a> > Create Public Subnet
           
         
           
@@ -1223,7 +1223,7 @@
 <ul>
 <li>Click <strong>Create subnet</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/003-createsubnet.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/003-createsubnet.png"></p>
 <ol start="2">
 <li>At the <strong>Create subnet</strong> page.</li>
 </ol>
@@ -1233,7 +1233,7 @@
 <li>In the <strong>Availability Zone</strong> section, select the first Availability zone.</li>
 <li>In the field <strong>IPv4 CIRD block</strong> enter <strong>10.10.1.0/24</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/004-createsubnet.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/004-createsubnet.png"></p>
 <ol start="3">
 <li>
 <p>Scroll to the bottom of the page, click <strong>Create subnet</strong>.</p>
@@ -1246,21 +1246,21 @@
 <li>Click <strong>Actions</strong>.</li>
 <li>Click <strong>Edit subnet settings</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/005-createsubnet.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/005-createsubnet.png"></p>
 <ol start="5">
 <li>Click <strong>Enable auto-assign public IPv4 address</strong>.</li>
 </ol>
 <ul>
 <li>Click <strong>Save</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/006-createsubnet.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/006-createsubnet.png"></p>
 <ol start="6">
 <li>Click <strong>Internet Gateways</strong>.</li>
 </ol>
 <ul>
 <li>Click <strong>Create internet gateway</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/007-createigw.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/007-createigw.png"></p>
 <ol start="7">
 <li>At the <strong>Create internet gateway</strong> page.</li>
 </ol>
@@ -1268,14 +1268,14 @@
 <li>In the <strong>Name tag</strong> field, enter <strong>Lab IGW</strong>.</li>
 <li>Click <strong>Create internet gateway</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/008-createigw.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/008-createigw.png"></p>
 <ol start="8">
 <li>After successful creation, click <strong>Actions</strong>.</li>
 </ol>
 <ul>
 <li>Click <strong>Attach to VPC</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/009-createigw.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/009-createigw.png"></p>
 <ol start="9">
 <li>At the <strong>Attach to VPC</strong> page.</li>
 </ol>
@@ -1284,7 +1284,7 @@
 <li>Click <strong>Attach internet gateway</strong>.</li>
 <li>Check the successful attaching process as shown below.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/010-createigw.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/010-createigw.png"></p>
 <ol start="10">
 <li>Next we will create a custom route table to assign to <strong>Lab Public Subnet</strong>.</li>
 </ol>
@@ -1292,7 +1292,7 @@
 <li>Click <strong>Route Tables</strong>.</li>
 <li>Click <strong>Create route table</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/011-creatertb.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/011-creatertb.png"></p>
 <ol start="11">
 <li>At the <strong>Create route table</strong> page.</li>
 </ol>
@@ -1307,7 +1307,7 @@
 <ul>
 <li>Click <strong>Edit routes</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/012-creatertb.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/012-creatertb.png"></p>
 <ol start="13">
 <li>At the <strong>Edit routes</strong> page.</li>
 </ol>
@@ -1317,14 +1317,14 @@
 <li>In the <strong>Target</strong> section, select <strong>Internet Gateway</strong> and then select <strong>Lab IGW</strong>.</li>
 <li>Click <strong>Save changes</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/013-creatertb.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/013-creatertb.png"></p>
 <ol start="14">
 <li>Click the <strong>Subnet associations</strong> tab.</li>
 </ol>
 <ul>
 <li>Click <strong>Edit subnet associations</strong> to proceed with the associate custom route table we just created in <strong>Lab Public Subnet</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/014-creatertb.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/014-creatertb.png"></p>
 <ol start="15">
 <li>At the <strong>Edit subnet associations</strong> page.</li>
 </ol>
@@ -1332,11 +1332,11 @@
 <li>Click on <strong>Lab Public Subnet</strong>.</li>
 <li>Click <strong>Save associations</strong>.</li>
 </ul>
-<p><img alt="VPC" src="/images/2.prerequisite/015-creatertb.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/015-creatertb.png"></p>
 <ol start="16">
 <li>Check that the route table information has been associated with <strong>Lab Public Subnet</strong> and the internet route information has been pointed to the Internet Gateway as shown below.</li>
 </ol>
-<p><img alt="VPC" src="/images/2.prerequisite/016-creatertb.png"></p>
+<p><img alt="VPC" src="http://localhost:1313/CI-CD_workshop/images/2.prerequisite/016-creatertb.png"></p>
 
 
 
@@ -1905,10 +1905,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/" title="Create VPC"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/" title="Create VPC"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/" title="Create Private Subnet" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/" title="Create Private Subnet" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1918,19 +1918,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/CI-CD_workshop/js/clipboard.min.js?1733755697"></script>
-    <script src="/CI-CD_workshop/js/perfect-scrollbar.min.js?1733755697"></script>
-    <script src="/CI-CD_workshop/js/perfect-scrollbar.jquery.min.js?1733755697"></script>
-    <script src="/CI-CD_workshop/js/jquery.sticky.js?1733755697"></script>
-    <script src="/CI-CD_workshop/js/featherlight.min.js?1733755697"></script>
-    <script src="/CI-CD_workshop/js/highlight.pack.js?1733755697"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/clipboard.min.js?1733838619"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/perfect-scrollbar.min.js?1733838619"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/perfect-scrollbar.jquery.min.js?1733838619"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/jquery.sticky.js?1733838619"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/featherlight.min.js?1733838619"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/highlight.pack.js?1733838619"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/CI-CD_workshop/js/modernizr.custom-3.6.0.js?1733755697"></script>
-    <script src="/CI-CD_workshop/js/learn.js?1733755697"></script>
-    <script src="/CI-CD_workshop/js/hugo-learn.js?1733755697"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/modernizr.custom-3.6.0.js?1733838619"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/learn.js?1733838619"></script>
+    <script src="http://localhost:1313/CI-CD_workshop/js/hugo-learn.js?1733838619"></script>
 
-    <link href="/CI-CD_workshop/mermaid/mermaid.css?1733755697" rel="stylesheet" />
-    <script src="/CI-CD_workshop/mermaid/mermaid.js?1733755697"></script>
+    <link href="http://localhost:1313/CI-CD_workshop/mermaid/mermaid.css?1733838619" rel="stylesheet" />
+    <script src="http://localhost:1313/CI-CD_workshop/mermaid/mermaid.js?1733838619"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

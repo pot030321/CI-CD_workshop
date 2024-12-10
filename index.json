@@ -1,237 +1,237 @@
 [
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/1-introduce/",
+	"uri": "http://localhost:1313/CI-CD_workshop/1-introduce/",
 	"title": "Introduction to Building a CI/CD Pipeline on AWS",
 	"tags": [],
 	"description": "",
 	"content": "Workshop: Automating Build, Test, and Deployment of a Web or Containerized Application on AWS In this workshop, we will learn how to leverage AWS services to build and deploy a complete CI/CD pipeline. The goal is to automate the build, test, and deployment process of a web or containerized application without the need for local development.\nAWS Services Required for This Workshop: CodeCommit: A source control service for managing and sharing application code. CodePipeline: Automates the CI/CD workflow, moving code from CodeCommit through the build, test, and deployment stages. CodeBuild: Builds and tests the application code from CodeCommit, allowing you to create Docker images and push them to ECR. ECR (Elastic Container Registry): A Docker image repository to store built versions of the application. ECS (Elastic Container Service): Manages and runs containers on AWS infrastructure, making it easy to deploy applications using Fargate. ALB (Application Load Balancer): Distributes traffic to containerized applications, ensuring scalability and stability for the service. IAM (Identity and Access Management): Manages access permissions for services like CodePipeline, CodeBuild, and ECS to ensure security and efficiency. S3 (Simple Storage Service): Stores artifacts or logs from CodeBuild for monitoring and analysis. Workshop Plan: Throughout the workshop, you will:\nSet up CodeCommit to store your application\u0026rsquo;s source code. Configure CodePipeline to automate the CI/CD process. Use CodeBuild to build Docker images and push them to ECR. Deploy the containerized application on ECS with Application Load Balancer. Use IAM to manage secure access permissions across AWS services. Store logs and artifacts in S3 for monitoring and review. Let’s dive into each step to set up the CI/CD pipeline on AWS!\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/",
+	"uri": "http://localhost:1313/CI-CD_workshop/",
 	"title": "Session Management",
 	"tags": [],
 	"description": "",
 	"content": "Work with Amazon System Manager - Session Manager Overall In this lab, you\u0026rsquo;ll learn the basics and practice of Amazon System Manager - Session Manager . Perform creating public and private instance connections.\nContent Introduction Preparation Connect to EC2 instance Manage session logs Port Forwarding Clean up resources "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.1-public-instance/",
+	"uri": "http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.1-public-instance/",
 	"title": "Connect to Public Instance",
 	"tags": [],
 	"description": "",
 	"content": "\nGo to EC2 service management console. Click on Public Linux Instance. Click Actions. Click Security. Click Modify IAM role. At the Modify IAM role page. Click to select SSM-Role. Click Save. You will need to wait about 10 minutes before performing the next step. This time our EC2 instance will automatically register with the Session Manager.\nGo to the AWS Systems Manager service management console Drag the left menu slider down. Click Session Manager. Click Start Session. Then select Public Linux Instance and click Start session to access the instance. Terminal will appear on the browser. Testing with the command sudo tcpdump -nn port 22 and sudo tcpdump we will see no SSH traffic but only HTTPS traffic. Above, we have created a connection to the public instance without opening SSH port 22, for better security, avoiding any attack to the SSH port.\nOne disadvantage of the above method is that we have to open the Security Group outbound at port 443 to the internet. Since it\u0026rsquo;s a public instance, it probably won\u0026rsquo;t be a problem, but if you want extra security, you can block port 443 to the internet and still use the Session Manager. We will go through this in the private instance section below.\nYou can click terminate to end the currently connected session before proceeding to the next step.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.1-codecommit/",
+	"uri": "http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.1-codecommit/",
 	"title": "Create CodeCommit Repository",
 	"tags": [],
 	"description": "",
 	"content": "Create CodeCommit Repository Go to the CodeCommit service management console.\nClick Create repository. In Repository name, enter the repository name, e.g., MyAppRepo. In Description, provide a brief description of the repository. Click Create repository to complete. After creation, save the repository URL information for use in the following steps.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/",
+	"uri": "http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.1-endpointssm/",
 	"title": "Create Endpoint ssm",
 	"tags": [],
 	"description": "",
 	"content": "Create VPC Endpoint SSM Go to VPC service management console Click Endpoints. Click Create endpoint. At the Create endpoint page. In the Name tag field, enter SSM. In the Service Category section, select AWS Services. In the Service Name section, In the Service category section, select: AWS services In the Service Name section enter: SSM then select Service Name: com.amazonaws.ap-southeast-1.ssm. In the Service Name column, click com.amazonaws.ap-southeast-1.ssm. In the VPC section, select Lab VPC. Select the first AZ, then select the Lab Private Subnet subnet. Scroll down. In the Security Group section, select the Security group SG VPC Endpoint that we created earlier. In the Policy section, select Full access. Scroll down. Click Create endpoint. We have created the VPC Interface Endpoint for SSM. "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/",
+	"uri": "http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.1-createvpc/",
 	"title": "Create VPC",
 	"tags": [],
 	"description": "",
 	"content": "Create VPC Lab VPC Go to VPC service management console Click Your VPC. Click Create VPC. At the Create VPC page. In the Name tag field, enter Lab VPC. In the IPv4 CIDR field, enter: 10.10.0.0/16. Click Create VPC. "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/6-applicationdeployment/6.1-ecs/",
+	"uri": "http://localhost:1313/CI-CD_workshop/6-applicationdeployment/6.1-ecs/",
 	"title": "ECS",
 	"tags": [],
 	"description": "",
 	"content": "In this section, we will configure Amazon ECS to deploy a containerized application. ECS provides a container management solution on AWS, making your application more scalable and secure.\nStep 6.1.1: Create ECS Cluster Go to the ECS Console.\nSelect Clusters and click Create Cluster. Choose the Networking only cluster type or EC2 Linux + Networking if you want to run on EC2.\nName the cluster, e.g., Lab-Cluster. Configure VPC and subnets for the ECS cluster to operate. Click Create to create the ECS Cluster.\nVerify that the cluster was successfully created. Step 6.1.2: Create Task Definition In the ECS Console, go to Task Definitions and select Create new Task Definition.\nChoose EC2 or Fargate depending on your setup. Configure Task Definition:\nTask name: Name the task (e.g., Lab-Task). Add container settings: Container name: Lab-Container Image: The Docker image (e.g., nginx:latest) Port mappings: 80:80 (or the required port) Configure resources (CPU, memory) as required.\nClick Create to save the Task Definition. Step 6.1.3: Run Task on ECS In the ECS Console, go to Clusters and select Lab-Cluster.\nClick Run Task to start the task. Configure the task settings:\nLaunch type: Select EC2 or Fargate. Task Definition: Choose the created Task Definition. Click Run Task to deploy the container on ECS.\nVerify the task has started successfully. "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/",
+	"uri": "http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.1-enablevpcdns/",
 	"title": "Enable DNS hostnames",
 	"tags": [],
 	"description": "",
 	"content": "Enable DNS hostnames on VPC. To create VPC Endpoint we will need to enable DNS hostnames feature on VPC. Go to VPC service management console\nClick Your VPCs.\nSelect Lab VPC.\nClick Actions.\nClick Edit DNS hostnames.\nClick Endpoint, then click Create Endpoint.\nAt the Edit DNS hostnames page. Click to select Enable. Click Save changes. "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/",
+	"uri": "http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/",
 	"title": "Preparing VPC and EC2",
 	"tags": [],
 	"description": "",
 	"content": "In this step, we will create a VPC with 2 public and private subnets. Then, create a Linux EC2 Instance located in the public subnet and a Windows EC2 Instance located in the private subnet.\nThe architecture overview after you complete this step will be as follows:\nTo learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:\nAbout Amazon EC2 Working with Amazon VPC Content Create VPC Create Public Subnet Create Private Subnet Create Security Group Create Public Linux Server Create Private Windows Server "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/4-s3log/4.1-updateiamrole/",
+	"uri": "http://localhost:1313/CI-CD_workshop/4-s3log/4.1-updateiamrole/",
 	"title": "Update IAM Role",
 	"tags": [],
 	"description": "",
 	"content": "For our EC2 instances to be able to send session logs to the S3 bucket, we will need to update the IAM Role assigned to the EC2 instance by adding a policy that allows access to S3.\nUpdate IAM Role Go to IAM service management console Click Roles. In the search box, enter SSM. Click on the SSM-Role role. Click Attach policies.\nIn the Search box enter S3.\nClick the policy AmazonS3FullAccess. Click Attach policy. In the production environment, we will grant stricter permissions to the specified S3 bucket. In the framework of this lab, we use the policy AmazonS3FullAccess for convenience.\nNext, we will proceed to create an S3 bucket to store session logs.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/2-prerequiste/",
+	"uri": "http://localhost:1313/CI-CD_workshop/2-prerequiste/",
 	"title": "Preparation Steps",
 	"tags": [],
 	"description": "",
 	"content": "\rTo complete this workshop, you need a source repository on AWS CodeCommit, a CI/CD pipeline, and supporting AWS services to enable automation.\nPreparation Requirements Create a repository on CodeCommit: This will be where the application source code is stored for automated build and deployment.\nGo to the AWS CodeCommit Console and create a new repository. See the detailed guide here. Configure IAM Role: Create an IAM Role with the necessary permissions for CodePipeline, CodeBuild, ECS, and other services required for CI/CD.\nGo to the AWS IAM Console and create an IAM Role with permissions for CodePipeline, CodeBuild, and ECS. Ensure the role has access to S3 for storing build artifacts and logs. Set up ECR (Elastic Container Registry): Create a repository in ECR to store Docker images after they are built.\nGo to the AWS ECR Console and create a new repository for your Docker images. Set up CodePipeline: Create a pipeline to manage and automate the CI/CD process.\nGo to the AWS CodePipeline Console and create a pipeline with the stages Source (CodeCommit), Build (CodeBuild), and Deploy (ECS). Ensure the pipeline is connected to CodeCommit for source, CodeBuild for build, and ECS for deployment. Configure CodeBuild: Create a build project in CodeBuild to build and test the application.\nGo to the AWS CodeBuild Console and create a new build project. Use a buildspec.yml file to define build steps, push Docker image to ECR, and run tests (if necessary). Set up ECS (Elastic Container Service): Create an ECS Cluster and Task Definition to manage containers.\nGo to the AWS ECS Console, create an ECS Cluster with Fargate or EC2. Create a Task Definition for the container, specifying the Docker image from ECR. Set up Application Load Balancer (ALB): Create an ALB to distribute traffic to the application containers.\nGo to the AWS EC2 Console and create an Application Load Balancer in the Public Subnet. Link ALB with the ECS Service to distribute traffic. S3 Bucket (optional): If you need to store logs or artifacts from CodeBuild, create an S3 bucket.\nGo to the AWS S3 Console and create a new bucket for storing logs and artifacts. Preparation Content Create a repository on CodeCommit Configure IAM Role for CI/CD Set up ECR for Docker Images Create pipeline in CodePipeline Configure project in CodeBuild Set up ECS Cluster and Task Definition Set up Application Load Balancer (ALB) Create S3 Bucket for logs and artifacts (optional) "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/",
+	"uri": "http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/",
 	"title": "Connect to Private instance",
 	"tags": [],
 	"description": "",
 	"content": "For Windows instance located in private subnet, there is no public IP, no internet gateway so it cannot go out internet.\nWith this type of instance, the traditional way is to use Bastion host technique which is expensive and laborious, but here we will use Session Manager with this type.\nBasically, the private instance still has to open the TCP 443 port to System Manager, but we don\u0026rsquo;t want to allow connection go out to the internet, but only in its VPC, to enhance our security posture.\nTo do that, we have to include the System Manager endpoint in the VPC, that is, using the VPC interface endpoint:\nVPC interface endpoint is attached to the subnet, so this method can be done not only with private subnet but also with public subnet, meaning that with public subnet, you can completely prohibit TCP 443 go out to the internet.\nContent: Enable DNS hostnames Create VPC Endpoint Connect Private Instance "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/",
+	"uri": "http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.2-endpointssmmessages/",
 	"title": "Create Endpoint ssmmessages",
 	"tags": [],
 	"description": "",
 	"content": "Create VPC Endpoint SSMMESSAGES Go to VPC service management console Click Endpoints. Click Create endpoint. At the Create endpoint page. In the Name tag field, enter SSMMESSAGES. In the Service Category section, select AWS Services. In the Service Name section, In the Service category select: AWS services In the Service Name field enter: ssmmessages then select Service Name: com.amazonaws.ap-southeast-1.ssmmessages. In the Service Name column, click com.amazonaws.ap-southeast-1.ssmmessages. In the VPC section, select Lab VPC. Select the first AZ, then select the Lab Private Subnet subnet. Scroll down. In the Security Group section, select the Security group SG VPC Endpoint that we created earlier. In the Policy section, select Full access Scroll down. Click Create endpoint. We have created the VPC Interface Endpoint SSMMESSAGES. "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.2-codepipeline/",
+	"uri": "http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.2-codepipeline/",
 	"title": "Create Pipeline",
 	"tags": [],
 	"description": "",
 	"content": "Create Pipeline with CodePipeline Go to the CodePipeline service management console.\nClick Create pipeline. In Pipeline name, enter the pipeline name, e.g., MyAppPipeline. In Service role, select New service role to create a new role, or Existing service role if you already have one. Click Next to set up the Source stage.\nUnder Source provider, select CodeCommit. Select the repository and branch you created in the CodeCommit step. Click Next. Configure the Build stage.\nUnder Build provider, select CodeBuild. Choose the project you created in the CodeBuild step. Configure the Deploy stage.\nSelect ECS or S3, depending on your application type. Click Create pipeline to complete.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.2-compute/2.1.6-createec2windows/",
+	"uri": "http://localhost:1313/CI-CD_workshop/2-prerequiste/2.2-compute/2.1.6-createec2windows/",
 	"title": "Create Private Instance",
 	"tags": [],
 	"description": "",
 	"content": " Go to EC2 service management console.\nClick Instances. Click Launch instances. On the Step 1: Choose an Amazon Machine Image (AMI) page.\nScroll down. Click Select to choose the Microsoft Windows Server 2019 Base AMI. On the Step 2: Choose an Instance Type page. Select the instance type t2.micro. Click Next: Configure Instance Details. On the Step 3: Configure Instance Details page. In the Network section, select Lab VPC. In the Subnet section, select Lab Private Subnet. For Auto-assign Public IP, select Use subnet setting (Disable). Click Next: Add Storage. Click Next: Add Tags to proceed to the next step.\nClick Next: Configure Security Group to proceed. On the Step 6: Configure Security Group page.\nSelect Select an existing security group. Choose the security group SG Private Windows Instance. Click Review and Launch. A warning dialog box appears because we do not configure the firewall to allow connections to port 22. Click Continue to proceed.\nOn the Step 7: Review Instance Launch page.\nClick Launch. In the Select an existing key pair or create a new key pair dialog box.\nClick Choose an existing key pair. In the Key pair name section, select LabKeypair. Check the box I acknowledge that I have access to the corresponding private key file, and that without this file, I won\u0026rsquo;t be able to log into my instance. Click Launch Instances to create the EC2 instance. Click View Instances to return to the list of EC2 instances.\nClick the edit icon under the Name column.\nIn the Edit Name dialog box, enter Private Windows Instance. Click Save. Next, we will proceed to create IAM Roles to support the Session Manager.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/",
+	"uri": "http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.2-createpublicsubnet/",
 	"title": "Create Public Subnet",
 	"tags": [],
 	"description": "",
 	"content": "Create Public Subnet Click Subnets. Click Create subnet. At the Create subnet page. In the VPC ID section, click Lab VPC. In the Subnet name field, enter Lab Public Subnet. In the Availability Zone section, select the first Availability zone. In the field IPv4 CIRD block enter 10.10.1.0/24. Scroll to the bottom of the page, click Create subnet.\nClick Lab Public Subnet.\nClick Actions. Click Edit subnet settings. Click Enable auto-assign public IPv4 address. Click Save. Click Internet Gateways. Click Create internet gateway. At the Create internet gateway page. In the Name tag field, enter Lab IGW. Click Create internet gateway. After successful creation, click Actions. Click Attach to VPC. At the Attach to VPC page. In the Available VPCs section, select Lab VPC. Click Attach internet gateway. Check the successful attaching process as shown below. Next we will create a custom route table to assign to Lab Public Subnet. Click Route Tables. Click Create route table. At the Create route table page. In the Name field, enter Lab Publicrtb. In the VPC section, select Lab VPC. Click Create route table. After creating the route table successfully. Click Edit routes. At the Edit routes page. Click Add route. In the Destination field, enter 0.0.0.0/0 In the Target section, select Internet Gateway and then select Lab IGW. Click Save changes. Click the Subnet associations tab. Click Edit subnet associations to proceed with the associate custom route table we just created in Lab Public Subnet. At the Edit subnet associations page. Click on Lab Public Subnet. Click Save associations. Check that the route table information has been associated with Lab Public Subnet and the internet route information has been pointed to the Internet Gateway as shown below. "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/4-s3log/4.2-creates3bucket/",
+	"uri": "http://localhost:1313/CI-CD_workshop/4-s3log/4.2-creates3bucket/",
 	"title": "Create S3 Bucket",
 	"tags": [],
 	"description": "",
 	"content": "In this step, we will create an S3 bucket to store session logs sent from EC2 instances.\nCreate S3 Bucket Access S3 service management console Click Create bucket. At the Create bucket page. In the Bucket name field, enter the bucket name lab-yourname-bucket-0001 In the Region section, select Region you are doing the current lab. The name of the S3 bucket must not be the same as all other S3 buckets in the system. You can substitute your name and enter a random number when generating the S3 bucket name.\nScroll down and click Create bucket. When we created the S3 bucket we did Block all public access so our EC2 instances won\u0026rsquo;t be able to connect to S3 via the internet. In the next step, we will configure the S3 Gateway Endpoint feature to allow EC2 instances to connect to the S3 bucket via the VPC\u0026rsquo;s internal network.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/",
+	"uri": "http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/",
 	"title": "Create VPC Endpoint",
 	"tags": [],
 	"description": "",
 	"content": "Create VPC Endpoint SSM We will create 3 interface endpoints required by the Session Manager:\nInterface endpoints: com.amazonaws.region.ssm com.amazonaws.region.ec2messages com.amazonaws.region.ssmmessages You can refer to more here\nContent: Create Endpoint ssm Create Endpoint ssmmessages Create Endpoint ec2messages "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/6-applicationdeployment/6.2-loadbalancer/",
+	"uri": "http://localhost:1313/CI-CD_workshop/6-applicationdeployment/6.2-loadbalancer/",
 	"title": "Load Balancer",
 	"tags": [],
 	"description": "",
 	"content": "In this section, we will configure an Application Load Balancer (ALB) to distribute traffic to containers in the ECS Cluster. ALB enhances load distribution and reliability for your application.\nStep 6.2.1: Create Application Load Balancer Go to the EC2 Console.\nSelect Load Balancers and click Create Load Balancer. Choose Application Load Balancer and configure as follows:\nName: Lab-ALB Scheme: Internet-facing or Internal IP address type: IPv4 VPC: Select the VPC where ECS is running. Configure Listener:\nListener: Port 80 or 443 for SSL. Target Group: Create Target Group for ECS containers. Click Create Load Balancer to finalize.\nStep 6.2.2: Attach ALB to ECS Service In ECS Console, navigate to Clusters and select Lab-Cluster.\nSelect Services and edit the service you wish to attach to ALB. Configure Service:\nLoad balancer type: Application Load Balancer Target Group: Select the Target Group created for ALB. Click Update to save changes.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/",
+	"uri": "http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/",
 	"title": "Connect to EC2 servers",
 	"tags": [],
 	"description": "",
 	"content": "In this step, we will connect to our EC2 servers, located in both the public and private subnets.\nContent 3.1. Connect to EC2 Public Server 3.2. Cconnect to EC2 Private Server\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/",
+	"uri": "http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.3-connectec2/",
 	"title": "Connect to instance",
 	"tags": [],
 	"description": "",
 	"content": "Assign IAM role and restart EC2 instance. Go to EC2 service management console Click Private Windows Instance. Click Actions. Click Security. Click Modify IAM Role. At the Modify IAM Role page. In the IAM role section, select SSM-Role. Click Save. Click Private Windows Instance. Click Instance state. Click Reboot instance to restart, then click Reboot to confirm. Please wait 5 minutes before doing the next step.\nConnect to the private EC2 instance. Go to System Manager - Session Manager service management console Click Start session. Click Private Windows Instance. Click Start session. Type ipconfig command to check the IP address information of Private Windows Instance as shown below. "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.3-codebuild/",
+	"uri": "http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.3-codebuild/",
 	"title": "Create Build Project",
 	"tags": [],
 	"description": "",
 	"content": "Create Build Project with CodeBuild Go to the CodeBuild service management console.\nClick Create build project. In Project name, enter the project name, e.g., MyAppBuildProject. In the Source section, select CodeCommit.\nChoose the repository you created in the CodeCommit section. In the Environment section, select the operating system, runtime, and image that suit your project.\nFor example, choose Cloud 9 and Standard: 5.0. In Buildspec, choose Insert build commands or create a buildspec.yml file.\nClick Create build project to complete.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/",
+	"uri": "http://localhost:1313/CI-CD_workshop/3-accessibilitytoinstances/3.2-private-instance/3.2.2-createvpcendpoint/3.2.2.3-endpointec2messages/",
 	"title": "Create Endpoint ec2messages",
 	"tags": [],
 	"description": "",
 	"content": "Create VPC Endpoint EC2MESSAGES Go to VPC service management console Click Endpoints. Click Create endpoint. At the Create endpoint page. In the Name tag field, enter SSMMESSAGES. In the Service Category section, select AWS Services. In the Service Name section, In the Service category select: AWS services In the field Service Name enter: ec2 then select Service Name: com.amazonaws.ap-southeast-1.ec2messages. In the Service Name column, click com.amazonaws.ap-southeast-1.ec2messages. In the VPC section, select Lab VPC. Select the first AZ, then select the Lab Private Subnet subnet. Scroll down. In the Security Group section, select the Security group SG VPC Endpoint that we created earlier. In the Policy section, select Full access Scroll down. Click Create endpoint. We have created the VPC Interface Endpoint EC2MESSAGES.\nMake sure the 3 required endpoints have been created as shown below.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/",
+	"uri": "http://localhost:1313/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/",
 	"title": "Create IAM Role",
 	"tags": [],
 	"description": "",
 	"content": "Create IAM Role In this step, we will proceed to create IAM Role. In this IAM Role, the policy AmazonSSMManagedInstanceCore will be assigned, this is the policy that allows the EC2 server to communicate with the Session Manager.\nGo to IAM service administration interface In the left navigation bar, click Roles. Click Create role. Click AWS service and click EC2. Click Next: Permissions. In the Search box, enter AmazonSSMManagedInstanceCore and press Enter to search for this policy. Click the policy AmazonSSMManagedInstanceCore. Click Next: Tags. Click Next: Review. Name the Role SSM-Role in Role Name Click Create Role . Next, we will make the connection to the EC2 servers we created with Session Manager.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/",
+	"uri": "http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.3-createprivatesubnet/",
 	"title": "Create Private Subnet",
 	"tags": [],
 	"description": "",
 	"content": "Create Private Subnet Click Subnets. Click Create subnet. On the Create subnet page. In the VPC ID section, select Lab VPC. In the Subnet name field, enter Lab Private Subnet. In the Availability Zone section, select the first Availability Zone. In the IPv4 CIDR block field, enter 10.10.2.0/24. Scroll to the bottom of the page and click Create subnet. The next step is to create the necessary security groups for the lab.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/4-s3log/4.3-creategwes3/",
+	"uri": "http://localhost:1313/CI-CD_workshop/4-s3log/4.3-creategwes3/",
 	"title": "Create S3 Gateway endpoint",
 	"tags": [],
 	"description": "",
 	"content": " Go to VPC service management console Click Endpoints. Click Create endpoint. At the Create endpoint page. In the Name tag field, enter S3GW. In the Service Category section, click AWS services. In the search box enter S3, then select com.amazonaws.[region].s3 In the Services section, select com.amazonaws.[region].s3 with the Type of Gateway. In the VPC section, select Lab VPC. In the Route tables section, select both route tables. Scroll down, click Create endpoint. The next step is to configure Session Manager to store session logs to the S3 bucket we created.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/5.4-ecr/",
+	"uri": "http://localhost:1313/CI-CD_workshop/5-cicdpipeline/5.4-ecr/",
 	"title": "Create ECR Repository",
 	"tags": [],
 	"description": "",
 	"content": "Create ECR Repository Go to the ECR service management console.\nClick Create repository. In Repository name, enter the repository name, e.g., myapp-ecr-repo. Select additional options if needed, like scan on push for security checks on new images. Click Create repository to complete.\nSave the URI of the repository to use during the Docker image build and deploy process.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.4-createsecgroup/",
+	"uri": "http://localhost:1313/CI-CD_workshop/2-prerequiste/2.1-networking/2.1.4-createsecgroup/",
 	"title": "Create Security Groups",
 	"tags": [],
 	"description": "",
 	"content": "Create Security Groups In this step, we will proceed to create the security groups used for our instances. As you can see, these security groups will not need to open traditional ports to SSH like port 22 or remote desktop through port 3389.\nCreate Security Group for Linux Instance Located in Public Subnet Go to VPC service management console. Click Security Group. Click Create security group. In the Security group name field, enter SG Public Linux Instance. In the Description section, enter SG Public Linux Instance. In the VPC section, click the X to reselect the Lab VPC created for this lab. Keep Outbound rule settings, scroll to the bottom, and click Create security group. As you can see, the security group created for the Linux public instance will not need to open traditional ports to SSH like port 22.\nCreate a Security Group for a Windows Instance Located in a Private Subnet After creating the security group for the Linux instance, click the Security Groups link to return to the list. Click Create security group. In the Security group name field, enter SG Private Windows Instance. In the Description section, enter SG Private Windows Instance. In the VPC section, click the X to reselect Lab VPC. Scroll down. Add Outbound rule to allow TCP 443 connection to 10.10.0.0/16 (CIDR of Lab VPC). Click Create security group. For the instance in the private subnet, we will connect to the Session Manager endpoint over a TLS-encrypted connection, so we need to allow outbound connection to VPC CIDR through port 443.\nCreate Security Group for VPC Endpoint In this step, we will create a security group for the VPC Endpoint of Session Manager.\nAfter creating the security group for the Windows instance, click the Security Groups link.\nClick Create security group. In the Security group name field, enter SG VPC Endpoint.\nIn the Description section, enter SG VPC Endpoint. In the VPC section, click the X to reselect Lab VPC. Scroll down and delete the Outbound rule. Add Inbound rule allowing TCP 443 from 10.10.0.0/16 (CIDR of Lab VPC). Click Create security group. With this, we have completed creating the necessary security groups for EC2 instances and VPC Endpoints.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/4-s3log/",
+	"uri": "http://localhost:1313/CI-CD_workshop/4-s3log/",
 	"title": "Manage session logs",
 	"tags": [],
 	"description": "",
 	"content": "With Session Manager, we can view the history of connections to instances through Session history. However, we have not seen the details of the commands used in a session.\nIn this section, we will proceed to create an S3 bucket and configure the session logs feature to see the details of the commands used in the session.\nContent: Update IAM Role Create S3 Bucket Create S3 Gateway endpoint Configure Session logs "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/5-cicdpipeline/",
+	"uri": "http://localhost:1313/CI-CD_workshop/5-cicdpipeline/",
 	"title": "CI/CD Pipeline Overview",
 	"tags": [],
 	"description": "",
 	"content": "CI/CD Pipeline for Automated Deployment In this section, we will set up a CI/CD (Continuous Integration and Continuous Deployment) pipeline using AWS services such as CodeCommit, CodePipeline, CodeBuild, and ECR. This pipeline will automate the deployment process, ensuring code updates are efficiently integrated, built, and deployed to a containerized environment on AWS.\nContent Overview 5.1 - CodeCommit: Setting up a repository in CodeCommit for version control. 5.2 - CodePipeline: Creating a pipeline to automate the CI/CD workflow. 5.3 - CodeBuild: Configuring a build environment for compiling and packaging the code. 5.4 - ECR: Setting up Amazon ECR to store Docker images. By the end of this section, you will have a fully operational CI/CD pipeline that can handle code updates automatically.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/6-applicationdeployment/",
+	"uri": "http://localhost:1313/CI-CD_workshop/6-applicationdeployment/",
 	"title": "Application Deployment",
 	"tags": [],
 	"description": "",
 	"content": "In this section, we will guide you through deploying a containerized application on AWS using Amazon ECS and Application Load Balancer (ALB). These services enable automatic scaling and high availability for your application, ensuring it can handle variable loads effectively.\nOverview of Application Deployment Our deployment steps include:\nSetting up an ECS Cluster to manage the containerized application. Defining ECS Task Definitions to specify the application container details. Configuring an Application Load Balancer to distribute traffic evenly across containers in the ECS Cluster. Follow each subsection carefully to complete the deployment setup. This guide is designed for beginners to grasp the fundamentals of deploying a scalable application on AWS.\nContent ECS Setup: Configuring ECS to handle containerized applications efficiently. Application Load Balancer: Creating and associating ALB with ECS for traffic distribution. Proceed with the next subsections to get started.\n"
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/7-cleanup/",
+	"uri": "http://localhost:1313/CI-CD_workshop/7-cleanup/",
 	"title": "Cleanup",
 	"tags": [],
 	"description": "",
 	"content": "In this section, we will go through the detailed steps to clean up each resource we created in this workshop. This is essential to avoid any ongoing charges on your AWS account.\n1. Delete ECS Services and Cluster Go to the ECS Console. In the left menu, select Clusters. Choose the Cluster you created for this workshop (e.g., LabCluster). Select the Services tab and: Click on each service. Select Update and set Desired tasks to 0 to stop the service. After the service stops, click Delete and confirm deletion. Once all services are deleted, return to the Cluster list. Select the cluster and click Delete Cluster to remove it completely. 2. Delete Application Load Balancer (ALB) Go to the EC2 Console. In the left menu, click Load Balancers. Select the Application Load Balancer created for this workshop (e.g., LabALB). Click Actions \u0026gt; Delete and confirm deletion. 3. Delete Auto Scaling Groups In the EC2 Console, go to Auto Scaling Groups in the left menu. Locate the Auto Scaling Group associated with your ECS cluster. Select it, click Delete, and confirm the deletion. 4. Delete Elastic Container Registry (ECR) Repositories Go to the ECR Console. Select Repositories from the left menu. Click on the repository you created (e.g., LabRepo). Choose View push commands to ensure no images remain (optional). Select Delete and confirm to delete the repository and its contents. 5. Delete S3 Buckets Go to the S3 Console. Locate each Bucket you created for this workshop (e.g., LabBucket). Click on the bucket name. In the Objects tab, select Empty bucket to remove contents. After the bucket is empty, go back to the Buckets view. Select the bucket, click Delete bucket, and confirm deletion. 6. Remove IAM Roles and Policies Go to the IAM Console. In the left menu, click Roles. Search for roles you created (e.g., LabRole or SSM-Role). Click on each role, and in the Permissions tab, detach policies associated with it (e.g., AmazonSSMFullAccess). Return to the Roles list, select the role, and click Delete Role to remove it. Repeat the same for any custom Policies created if necessary. 7. Delete VPC and Networking Components Go to the VPC Console. In the Your VPCs section: Select the VPC you created (e.g., LabVPC). Click Actions \u0026gt; Delete VPC and confirm. For each Subnet created: Go to Subnets in the left menu. Select each subnet associated with LabVPC and click Delete. Go to Route Tables and: Delete any route tables associated with LabVPC. Go to Internet Gateways: Detach the gateway from LabVPC if attached. Select the gateway and click Delete Internet Gateway. 8. Terminate EC2 Instances Go to the EC2 Console. In the Instances section: Select the Public and Private instances created for the workshop. Click Actions \u0026gt; Instance State \u0026gt; Terminate. Confirm termination. "
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/categories/",
+	"uri": "http://localhost:1313/CI-CD_workshop/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "https://pot030321.github.io/CI-CD_workshop/tags/",
+	"uri": "http://localhost:1313/CI-CD_workshop/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

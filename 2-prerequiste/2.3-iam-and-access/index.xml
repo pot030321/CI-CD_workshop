@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Create IAM Role on AWS System Manager</title>
-    <link>https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/</link>
-    <description>Recent content in Create IAM Role on AWS System Manager</description>
+    <title>Create IAM Role on Introduction to Building a CI/CD Pipeline on AWS</title>
+    <link>http://localhost:1313/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/</link>
+    <description>Recent content in Create IAM Role on Introduction to Building a CI/CD Pipeline on AWS</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://pot030321.github.io/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/CI-CD_workshop/2-prerequiste/2.3-iam-and-access/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
